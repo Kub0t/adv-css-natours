@@ -13,3 +13,8 @@
 .u-margin-bottom-small {
     margin-bottom: 1.5rem;
 }
+
+.u-first-row {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+}
