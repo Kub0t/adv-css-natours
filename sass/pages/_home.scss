@@ -48,3 +48,21 @@
     }
     
 }
+
+.section-stories {
+    padding: 10rem 0;
+    position: relative;
+    // height: 120rem;
+    
+    &__container {
+    display: grid;
+    grid-template-columns: 100rem;
+    grid-template-rows: 5rem repeat(2, 30rem);
+    column-gap: 5rem;
+    row-gap: 5rem;
+    // padding: 0 15rem;
+    justify-content: center;
+    justify-items: center;        
+    align-items: center;
+    }
+}
