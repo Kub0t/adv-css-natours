@@ -52,7 +52,6 @@
 .section-stories {
     padding: 10rem 0;
     position: relative;
-    // height: 120rem;
     
     &__container {
     display: grid;
@@ -65,4 +64,37 @@
     justify-items: center;        
     align-items: center;
     }
+}
+
+.section-book {
+    padding: 10rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    display: grid;
+    grid-template-columns: 100rem;
+    grid-template-rows: 60rem;
+    justify-content: center;
+
+    // position: relative;
+    
+   
+}
+
+
+.book {
+    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    max-width: 114rem;
+    // height: 50rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    // grid-template-rows: ;
+
+    &__form {
+        padding: 4rem;
+    }
+
+    
 }
