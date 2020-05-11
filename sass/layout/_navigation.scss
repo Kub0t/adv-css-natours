@@ -14,7 +14,7 @@
         z-index: 1010;
         border-radius: 50%;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
-        text-align: center;
+        text-align: center; // centers icon lines
         cursor: pointer;
         
     }
@@ -29,7 +29,7 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
         
-        transition: transform .8s cubic-bezier(1, 0, 1, .4);
+        transition: transform .6s cubic-bezier(1, 0, 1, .4);
             
        // transform: scale(80);
     }
@@ -37,14 +37,13 @@
     &__nav {
         position: fixed;
         height: 100vh;
-        width: 100%;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1005;
         
         opacity: 0;
         width: 0;
-        transition: opacity .8s;
+        transition: all .6s cubic-bezier(1, 0, 1, .4); 
     }
     
     &__list {
@@ -62,7 +61,7 @@
     &__link {
         &:link,
         &:visited {    
-            display: inline-block;
+            display: inline-block;  // wo. it padding and transform is not working
             font-size: 3rem;
             font-weight: 300;
             padding: 1rem 2rem;
@@ -87,7 +86,7 @@
         }
     }
     
-    // FUNCTIONALITY
+    // FUNCTIONALITY - CHECKBOX HACK
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
@@ -107,7 +106,7 @@
         &::after {
             width: 3rem;
             height: 2px;
-            background-color: $color-black;
+            background-color: $color-grey-dark-3;
             display: inline-block;
             
         }
@@ -120,16 +119,16 @@
             transition: all .2s;
         }
         
-        &::before {
+        &::before { 
             top: -.8rem;
+            transform-origin: center;  // for learning purpose only, will work the same without it
         }
         
         &::after {
             top: .8rem;
+            transform-origin: center;
+
         }
-        
-        
-    
     }
     
     &__button:hover &__icon::before {
