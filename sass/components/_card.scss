@@ -2,9 +2,22 @@
 
     // FUNCTIONALITY
     perspective: 150rem;
+    
     display: grid;
-    grid-template-rows: min-content;
+    grid-template-rows: 52rem;
     grid-template-columns: 30rem;
+
+    @include respond(tab-land) {
+        grid-template-columns: 25rem;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: 40rem;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: 35rem;
+    }
 
     &__side {
         grid-area: 1 / 1 / 2 / 2;        
@@ -53,6 +66,10 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
 
+        @include respond(tab-land) {
+            height: 20rem;
+        }
+
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark) ,url(../img/nat-5.jpg);
         }
@@ -77,6 +94,15 @@
         top: 12rem;
         right: 3rem;
         width: 75%;
+
+        @include respond(tab-land) {
+           top: 9rem;
+        }
+        
+        @include respond(tab-port) {
+           top: 14rem;
+           width: 80%;
+        }
     }
 
     &__heading-span {
@@ -91,8 +117,8 @@
         }
         &--2 {
             background-image: linear-gradient(to right bottom,
-            rgba($color-primary-dark, .85)),  
-            rgba($color-primary-light, .85);
+            rgba($color-primary-light, .85),  
+            rgba($color-primary-dark, .85));
         }
         &--3 {
             background-image: linear-gradient(to right bottom,

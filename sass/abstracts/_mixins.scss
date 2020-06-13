@@ -13,6 +13,23 @@
     transform: translate(-50%, -50%);
 }
 
+/* MEDIA QUERY MANAGER
+@content - allows to pass code into the mixin
+
+easier version:
+@mixin respond-phone {
+    @media (max-width: 600px) {@content}
+}
+
+usage:
+@include respond-phone {
+    font-size: 50%;
+}
+
+ORDER: Base + typogrphy > general layout + grid > page layout > components
+
+*/
+
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         @media (max-width: 37.5em) { @content };    // 600px

@@ -27,17 +27,26 @@
     //
 
     &__container {
-    //max-width: 114rem;
-    display: grid;
-    grid-template-columns: repeat(3, 30rem);
-    grid-template-rows: min-content 50rem 15rem;
-    column-gap: 5rem;
-    row-gap: 5rem;
-    padding: 0 15rem;
+        //max-width: 114rem;
+        display: grid;
+        grid-template-columns: repeat(3, 30rem);
+        grid-template-rows: min-content 50rem 15rem;
+        column-gap: 5rem;
+        row-gap: 5rem;
+        padding: 0 15rem;
+        
+        justify-content: center;
+        justify-items: center;
 
-    
-    justify-content: center;
-    justify-items: center;
+        @include respond(tab-land) {
+            grid-template-columns: repeat(3, 25rem);
+            column-gap: 3rem;
+        }
+        
+        @include respond(tab-port) {
+            grid-template-columns: 40rem;
+            grid-template-rows: min-content repeat(3, 52rem) 15rem;
+        }
     
     }   
 
@@ -55,14 +64,19 @@
     
     &__container {
     display: grid;
-    grid-template-columns: 100rem;
-    grid-template-rows: 5rem repeat(2, 30rem);
+    grid-template-columns: max-content;
+    grid-template-rows: minmax(5rem, max-content) repeat(2, min-content);
     column-gap: 5rem;
     row-gap: 5rem;
     // padding: 0 15rem;
     justify-content: center;
     justify-items: center;        
     align-items: center;
+    
+        @include respond(phone) {    
+            grid-template-rows: max-content repeat(2, min-content);
+            grid-template-columns: 50rem;
+        }
     }
 }
 
@@ -72,11 +86,16 @@
 
     display: grid;
     grid-template-columns: 100rem;
-    grid-template-rows: 60rem;
+    grid-template-rows: 50rem;
     justify-content: center;
 
-    // position: relative;
+    @include respond(tab-land) {
+        grid-template-columns: 80vw;
+    }
     
+    @include respond(tab-port) {
+        grid-template-rows: min-content;
+    }
    
 }
 
@@ -87,10 +106,21 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
     max-width: 114rem;
-    // height: 50rem;
+    // height: 60rem;
     display: grid;
     grid-template-columns: 50% 50%;
-    // grid-template-rows: ;
+    
+    
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 65%, transparent 65%), url(../img/nat-10.jpg);
+        grid-template-columns: 65% 35%;
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(105deg, rgba($color-white, .85) 0%, rgba($color-white, .85) 100%), url(../img/nat-10.jpg);
+        grid-template-columns: 100%;
+    }
+
 
     &__form {
         padding: 4rem;
